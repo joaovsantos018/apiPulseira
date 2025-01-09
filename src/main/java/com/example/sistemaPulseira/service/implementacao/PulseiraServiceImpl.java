@@ -17,4 +17,8 @@ public class PulseiraServiceImpl implements PulseiraService {
     public List<Cliente> getAllClientes() {
         return pulseiraRepository.findAll();
     }
+
+    public Cliente salvaCliente(Cliente cliente) {
+        return pulseiraRepository.save(cliente);
+    }
 }

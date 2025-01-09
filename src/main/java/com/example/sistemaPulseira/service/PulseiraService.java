@@ -7,4 +7,5 @@ import java.util.List;
 public interface PulseiraService {
     List<Cliente> getAllClientes();
 
+    Cliente salvaCliente(Cliente cliente);
 }
