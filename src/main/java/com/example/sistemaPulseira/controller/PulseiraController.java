@@ -1,5 +1,6 @@
 package com.example.sistemaPulseira.controller;
 
+import com.example.sistemaPulseira.DTO.RecargaDTO;
 import com.example.sistemaPulseira.entity.Cliente;
 import com.example.sistemaPulseira.service.PulseiraService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,17 @@ public class PulseiraController {
         }
     }
 
+
+
     @GetMapping("/getAll")
     public List<Cliente> allClientes() {
     return pulseiraService.getAllClientes();
+    }
+
+
+    @PostMapping("/recarregaConsumacao")
+    public Cliente recarregaPorPulseiraId (@RequestBody RecargaDTO recargaDTO) {
+        return pulseiraService.recargaPorPulseiraId(recargaDTO.getValor(), recargaDTO.getPulseiraId());
     }
 
 }

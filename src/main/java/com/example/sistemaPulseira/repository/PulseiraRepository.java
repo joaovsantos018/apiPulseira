@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface PulseiraRepository extends JpaRepository<Cliente, UUID> {
+public interface PulseiraRepository extends JpaRepository<Cliente, Integer> {
 
 }

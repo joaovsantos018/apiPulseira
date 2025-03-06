@@ -14,7 +14,7 @@ public class Cliente {
     public Integer pulseiraID;
 
 
-    public Double saldo;
+    public Double saldo ;
 
     public String nome;
 }

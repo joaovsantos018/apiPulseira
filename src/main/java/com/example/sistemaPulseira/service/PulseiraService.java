@@ -8,4 +8,6 @@ public interface PulseiraService {
     List<Cliente> getAllClientes();
 
     Cliente salvaCliente(Cliente cliente);
+
+    Cliente recargaPorPulseiraId(Double valor, Integer pulseiraId);
 }
