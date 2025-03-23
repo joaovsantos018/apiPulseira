@@ -10,4 +10,6 @@ public interface PulseiraService {
     Cliente salvaCliente(Cliente cliente);
 
     Cliente recargaPorPulseiraId(Double valor, Integer pulseiraId);
+
+    Object getByPulseiraId(Integer id);
 }

@@ -30,17 +30,27 @@ public class PulseiraServiceImpl implements PulseiraService {
     }
 
 
+    public Cliente recargaPorPulseiraId(Double valor, Integer pulseiraId) {
+        try {
+            Optional<Cliente> clienteOpt = pulseiraRepository.findById(pulseiraId);
+            if(clienteOpt.isPresent()){
+            Cliente cliente = clienteOpt.get();
 
-    public Cliente recargaPorPulseiraId(Double valor, Integer pulseiraId){
-        Optional<Cliente> clienteOpt = pulseiraRepository.findById(pulseiraId);
+            log.info("cliente" + cliente);
 
-        Cliente cliente = clienteOpt.get();
-
-        log.info("cliente" + cliente);
-
-        cliente.saldo += valor;
+            cliente.saldo += valor;
 
 
-         return pulseiraRepository.save(cliente);
+            return pulseiraRepository.save(cliente);
+            }
+        return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public Object getByPulseiraId(Integer id) {
+        return pulseiraRepository.findById(id);
     }
 }
