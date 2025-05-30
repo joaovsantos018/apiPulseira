@@ -3,6 +3,7 @@ package com.example.sistemaPulseira.service;
 import com.example.sistemaPulseira.entity.Cliente;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PulseiraService {
     List<Cliente> getAllClientes();
@@ -11,5 +12,11 @@ public interface PulseiraService {
 
     Cliente recargaPorPulseiraId(Double valor, Integer pulseiraId);
 
-    Object getByPulseiraId(Integer id);
+    Cliente consumacaoPorPulseira(Double valor, Integer pulseiraId);
+
+    Cliente getByPulseiraId(Integer pulseiraId);
+
+    Cliente deleteCliente(Integer pulseiraId);
+
+    Map<String, Double> getSaldoByPulseiraId(Integer pulseiraId);
 }
